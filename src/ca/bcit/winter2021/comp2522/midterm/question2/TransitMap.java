@@ -3,32 +3,31 @@ package ca.bcit.winter2021.comp2522.midterm.question2;
 import java.util.ArrayList;
 
 public class TransitMap {
-    //TODO: define proper instance variables if needed
-    private ArrayList<Road> roads;
+    private ArrayList<Road> roads = new ArrayList<>();
     private  int distance;
 
-    //TODO: define a constructor(s)
 
-    public TransitMap() {
+    public void addRoad(Road road){
+        this.roads.add(road);
     }
 
-
-    //TODO: Add proper methods if needed
 
     public int getDistance() {
         return distance;
     }
-    public Road getBiggestDistance(){
-        int maxDistance = 0;
-        Road longestDistance = null;
 
-        for(Road road: roads){
-            if(road.getDistance()>maxDistance){
-                maxDistance = road.getDistance();
-                longestDistance = road;
+    public ArrayList<Double> getDistances(String cityName){
+        ArrayList<Double> distances = new ArrayList<>();
+        for (Road road: roads){
+            if(road.getCity1Name().equals(cityName) || road.getCity2Name().equals(cityName)){
+                distances.add(road.getDistance());
             }
         }
-        return longestDistance;
+
+        return distances;
     }
 
+    public ArrayList<Road> getRoads(){
+        return this.roads;
+    }
 }
