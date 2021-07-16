@@ -1,21 +1,38 @@
 package ca.bcit.winter2021.comp2522.midterm.question1;
 
 public class TV {
-    //TODO: define 4 instance properties for the class TV
-    private boolean turnOnOFFTV;
-    private boolean muteUnMuteTV;
-    private int changeVolume;
-    public int changeChannel;
+    private boolean isOn;
+    private boolean isMute;
+    private int volume;
+    public int currnetChannel;
 
-    //TODO: define a constructor for the class TV
-
-    public TV(boolean turnOnOFFTV, boolean muteUnMuteTV, int changeVolume, int changeChannel) {
-        this.turnOnOFFTV = turnOnOFFTV;
-        this.muteUnMuteTV = muteUnMuteTV;
-        this.changeVolume = changeVolume;
-        this.changeChannel = changeChannel;
+    public TV(int volume, int currnetChannel, boolean isOn, boolean isMute) {
+        this.volume = volume;
+        this.currnetChannel = currnetChannel;
+        this.isOn = isOn;
+        this.isMute = isMute;
     }
 
-    //TODO: add any instance, static method as needed
-
+    public int getVolume(){
+        return this.volume;
+    }
+    public void setVolume(int volume){
+        this.volume = volume;
+    }
+    public boolean isMute(){
+        return this.isMute;
+    }
+    public void setMute(boolean status){
+        this.isMute = status;
+    }
+    public boolean isTVON(){
+        return isOn;
+    }
+    public void setTVON(boolean status){
+        this.isOn = status;
+    }
+    public int getChannel(){ return this.currnetChannel; }
+    public void setChannel(int channel){
+        this.currnetChannel = channel;
+    }
 }

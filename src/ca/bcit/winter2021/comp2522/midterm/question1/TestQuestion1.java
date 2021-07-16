@@ -5,28 +5,28 @@ public class TestQuestion1 {
     public static void runAllTestScenariosForQuestion1(){
 
         TV tv1 = null;
-        //TODO: create tv1 which is an instance of TV. The tv1 instance should be initialized with volume: 10, channel: 100, unmute and off.
-
+        tv1 = new TV(10, 100, false, false);
         WhiteRemote whiteRemote = null;
         BlackRemote blackRemote = null;
-        //TODO: create an instance for the whiteRemote and blackRemote.
+        whiteRemote = new WhiteRemote();
+        blackRemote = new BlackRemote();
 
+        whiteRemote.turnOnOFFTV(tv1);
 
-        //TODO: use the whiteRemote instance to turn on the tv1
+        whiteRemote.changeVolume(+1, tv1);
+        whiteRemote.changeVolume(+1, tv1);
+        whiteRemote.changeVolume(+1, tv1);
 
+        whiteRemote.changeVolume(-1, tv1);
+        whiteRemote.changeVolume(-1, tv1);
 
-        //TODO: use the whiteRemote object to change the tv1's volume to 13
+        blackRemote.changeChannel(+1, tv1);
+        blackRemote.changeChannel(+1, tv1);
+        blackRemote.changeChannel(+1, tv1);
 
-        //TODO: use the whiteRemote object to change the tv1's volume back to 11
+        blackRemote.muteUnMuteTV(tv1);
 
-
-        //TODO: use the blackRemote object to do change the tv1's current channle to 103
-
-
-        //TODO: use the blackRemote instance to mute the tv1
-
-
-        //TODO: use the whiteRemote instance to unmute the tv1
+        whiteRemote.muteUnMuteTV(tv1);
 
 
         //TODO: Make sure the following print statement, prints out the information of the TV (volume, channle, mute or unmute, on or off)
