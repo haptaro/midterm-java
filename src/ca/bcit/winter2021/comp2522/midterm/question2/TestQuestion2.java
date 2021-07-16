@@ -36,7 +36,22 @@ public class TestQuestion2 {
         Road road14 = new Road(PHILADELPHIA, NEWYORK, 80.592);
         Road road15 = new Road(PHILADELPHIA, CHICAGO, 663.624);
         Road road16 = new Road(PHILADELPHIA, DETROIT, 441.609);
-
+        tm.addRoad(road1);
+        tm.addRoad(road2);
+        tm.addRoad(road3);
+        tm.addRoad(road4);
+        tm.addRoad(road5);
+        tm.addRoad(road6);
+        tm.addRoad(road7);
+        tm.addRoad(road8);
+        tm.addRoad(road9);
+        tm.addRoad(road10);
+        tm.addRoad(road11);
+        tm.addRoad(road12);
+        tm.addRoad(road13);
+        tm.addRoad(road14);
+        tm.addRoad(road15);
+        tm.addRoad(road16);
 
         //Note: Do not make changes to the following statements
         //Note: Do not make changes to the following statements
