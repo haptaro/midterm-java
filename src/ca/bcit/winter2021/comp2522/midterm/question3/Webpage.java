@@ -8,8 +8,9 @@ public class Webpage {
 
     private ArrayList<TwitterAccount> accounts;
 
-
-    //TODO: define a constructors
+    public Webpage(ArrayList<TwitterAccount> accounts){
+        this.accounts = accounts;
+    }
 
 
     //TODO: Add proper methods if needed
