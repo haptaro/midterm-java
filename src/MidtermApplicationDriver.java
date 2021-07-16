@@ -2,8 +2,6 @@ import ca.bcit.winter2021.comp2522.midterm.question1.TestQuestion1;
 import ca.bcit.winter2021.comp2522.midterm.question2.TestQuestion2;
 import ca.bcit.winter2021.comp2522.midterm.question3.TestQuestion3;
 import ca.bcit.winter2021.comp2522.midterm.question4.TestQuestion4;
-import ca.bcit.winter2021.comp2522.midterm.question5.TestQuestion5;
-import ca.bcit.winter2021.comp2522.midterm.question5.TestQuestion6;
 
 //********************************************************************************//
 //Please write your information here:
