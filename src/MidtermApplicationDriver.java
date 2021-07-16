@@ -26,6 +26,5 @@ public class MidtermApplicationDriver {
         TestQuestion2.runAllTestScenariosForQuestion2();
         TestQuestion3.runAllTestScenariosForQuestion3();
         TestQuestion4.runAllTestScenariosForQuestion4();
-        TestQuestion6.runAllTestScenariosForQuestion6();
     }
 }
