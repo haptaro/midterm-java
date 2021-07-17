@@ -2,6 +2,7 @@ import ca.bcit.winter2021.comp2522.midterm.question1.TestQuestion1;
 import ca.bcit.winter2021.comp2522.midterm.question2.TestQuestion2;
 import ca.bcit.winter2021.comp2522.midterm.question3.TestQuestion3;
 import ca.bcit.winter2021.comp2522.midterm.question4.TestQuestion4;
+import ca.bcit.winter2021.comp2522.midterm.question7.TestQuestion7;
 
 //********************************************************************************//
 //Please write your information here:
@@ -24,5 +25,6 @@ public class MidtermApplicationDriver {
         TestQuestion2.runAllTestScenariosForQuestion2();
         TestQuestion3.runAllTestScenariosForQuestion3();
         TestQuestion4.runAllTestScenariosForQuestion4();
+        TestQuestion7.runAllTestScenariosForQuestion7();
     }
 }
