@@ -3,25 +3,25 @@ package ca.bcit.winter2021.comp2522.midterm.question9;
 import java.util.ArrayList;
 
 public class Invoice {
-    ArrayList<Item> engineeringInvoice;
-    ArrayList<Item> productInvoice;
-    ArrayList<Item> inventoryInvoice;
+    ArrayList<Item> engineeringInvoices;
+    ArrayList<Item> productInvoices;
+    ArrayList<Item> inventoryInvoices;
 
-    Invoice(ArrayList<Item> engineeringInvoice, ArrayList<Item> productInvoice, ArrayList<Item> inventoryInvoice){
-        this.engineeringInvoice = engineeringInvoice;
-        this.productInvoice = productInvoice;
-        this.inventoryInvoice = inventoryInvoice;
+    Invoice(ArrayList<Item> engineeringInvoices, ArrayList<Item> productInvoices, ArrayList<Item> inventoryInvoices){
+        this.engineeringInvoices = engineeringInvoices;
+        this.productInvoices = productInvoices;
+        this.inventoryInvoices = inventoryInvoices;
     }
 
     double calculateTotalInvoicePrice(){
         double totalPrice = 0;
-        totalPrice = totalPrice + engineeringInvoice.stream()
+        totalPrice = totalPrice + engineeringInvoices.stream()
                 .mapToInt(w -> w.getTotalPrice())
                 .sum();
-        totalPrice = totalPrice + productInvoice.stream()
+        totalPrice = totalPrice + productInvoices.stream()
                 .mapToInt(w -> w.getTotalPrice())
                 .sum();
-        totalPrice = totalPrice + inventoryInvoice.stream().
+        totalPrice = totalPrice + inventoryInvoices.stream().
                 mapToInt(w -> w.getTotalPrice())
                 .sum();
         return totalPrice;
