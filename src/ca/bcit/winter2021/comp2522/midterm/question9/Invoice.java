@@ -18,7 +18,7 @@ public class Invoice {
     }
 }
 
-public class EngineeringItem implements Item {
+class EngineeringItem extends Item {
     private int price;
     private int quantity;
 
@@ -32,7 +32,7 @@ public class EngineeringItem implements Item {
     }
 }
 
-public class ProductItem implements Item {
+class ProductItem extends Item {
     private int price;
     private int quantity;
 
@@ -46,7 +46,7 @@ public class ProductItem implements Item {
     }
 }
 
-public class InventoryItem implements Item {
+class InventoryItem extends Item {
     private int price;
     private int quantity;
 
@@ -56,11 +56,14 @@ public class InventoryItem implements Item {
     }
 
     public int getTotalPrice() {
-        return (int) ((this.price * this.quantity) + (this.quantity * 10);
+        return (int) ((this.price * this.quantity) + (this.quantity * 10));
     }
 }
 
-public interface Item {
-    public Item(int price, int quantity);
-    public int getTotalPrice();
+abstract class Item {
+    public Item() {}
+
+    public int getTotalPrice() {
+        return 0;
+    }
 }
