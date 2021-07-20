@@ -3,48 +3,64 @@ package ca.bcit.winter2021.comp2522.midterm.question9;
 import java.util.ArrayList;
 
 public class Invoice {
-    ArrayList<Item> engineeringInvoices;
-    ArrayList<Item> productInvoices;
-    ArrayList<Item> inventoryInvoices;
+    ArrayList<Item> items;
 
-    Invoice(ArrayList<Item> engineeringInvoices, ArrayList<Item> productInvoices, ArrayList<Item> inventoryInvoices){
-        this.engineeringInvoices = engineeringInvoices;
-        this.productInvoices = productInvoices;
-        this.inventoryInvoices = inventoryInvoices;
+    Invoice(ArrayList<Item> items){
+        this.items = items;
     }
 
     double calculateTotalInvoicePrice(){
         double totalPrice = 0;
-        totalPrice = totalPrice + engineeringInvoices.stream()
+        totalPrice = totalPrice + items.stream()
                 .mapToInt(w -> w.getTotalPrice())
-                .sum();
-        totalPrice = totalPrice + productInvoices.stream()
-                .mapToInt(w -> w.getTotalPrice())
-                .sum();
-        totalPrice = totalPrice + inventoryInvoices.stream().
-                mapToInt(w -> w.getTotalPrice())
                 .sum();
         return totalPrice;
     }
 }
 
-public class Item {
+public class EngineeringItem implements Item {
     private int price;
     private int quantity;
-    private String department;
 
-    public Item(int price, int quantity, String department) {
+    public EngineeringItem(int price, int quantity) {
         this.price = price;
         this.quantity = quantity;
     }
 
     public int getTotalPrice() {
-        if (department == "engineering") {
-            return (int) ((this.price * this.quantity) + (this.price * this.quantity) * 0.5);
-        } else if (department == "product") {
-            return (this.price * this.quantity) + 100;
-        } else {  //inventory
-            return (int) ((this.price * this.quantity) + (this.quantity * 10);
-        }
+        return (int) ((this.price * this.quantity) + (this.price * this.quantity) * 0.5);
     }
+}
+
+public class ProductItem implements Item {
+    private int price;
+    private int quantity;
+
+    public ProductItem(int price, int quantity) {
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public int getTotalPrice() {
+        return (this.price * this.quantity) + 100;
+    }
+}
+
+public class InventoryItem implements Item {
+    private int price;
+    private int quantity;
+
+    public InventoryItem(int price, int quantity) {
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public int getTotalPrice() {
+        return (int) ((this.price * this.quantity) + (this.quantity * 10);
+    }
+}
+
+public interface Item {
+    public Item(int price, int quantity);
+    public int getTotalPrice();
 }
