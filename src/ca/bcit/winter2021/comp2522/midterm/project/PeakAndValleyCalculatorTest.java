@@ -31,4 +31,19 @@ class PeakAndValleyCalculatorTest {
         int[] expectedPeak = new int[] {6, 6, 6};
         assertTrue(Arrays.equals(peakAndValley.getPeaks(), expectedPeak));
     }
+
+    @Test
+    void test_technical_report_2() {
+        int[] input = new int[] {6};
+        PeakAndValley peakAndValley = calculator.calcurate(input);
+        int[] expectedValley = new int[] {6};
+        assertTrue(Arrays.equals(peakAndValley.getValleys(), expectedValley));
+        int[] expectedPeak = new int[] {6};
+        assertTrue(Arrays.equals(peakAndValley.getPeaks(), expectedPeak));
+    }
+
+    @Test
+    void test_technical_report_3() {
+        // Should ask when input value is empty
+    }
 }
