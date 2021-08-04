@@ -12,10 +12,6 @@ class PeakAndValleyCalculatorTest {
         calculator = new PeakAndValleyCalculator();
     }
 
-    @org.junit.jupiter.api.AfterEach
-    void tearDown() {
-    }
-
     @Test
     void test_calcurate_part1() {
         int[] input = new int[] {6, 1, 4};
