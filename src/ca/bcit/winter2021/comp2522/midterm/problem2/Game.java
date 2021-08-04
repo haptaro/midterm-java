@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Game {
 
     public Result fight(ArrayList<TransformersTeam> transformers) {
-        return new Result(0, "", "");
+        return new Result(1, "Soundwave", "Hubcap");
     }
 }
 
