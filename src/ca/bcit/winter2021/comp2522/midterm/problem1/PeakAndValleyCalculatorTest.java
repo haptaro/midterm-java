@@ -1,4 +1,4 @@
-package ca.bcit.winter2021.comp2522.midterm.project;
+package ca.bcit.winter2021.comp2522.midterm.problem1;
 
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;

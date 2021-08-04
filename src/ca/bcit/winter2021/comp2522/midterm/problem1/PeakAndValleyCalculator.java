@@ -1,6 +1,4 @@
-package ca.bcit.winter2021.comp2522.midterm.project;
-
-import ca.bcit.winter2021.comp2522.midterm.question7.Book;
+package ca.bcit.winter2021.comp2522.midterm.problem1;
 
 import java.util.ArrayList;
 
