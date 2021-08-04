@@ -6,12 +6,13 @@ import java.util.ArrayList;
 
 public class PeakAndValleyCalculator {
     public PeakAndValley calcurate(int[] inputs){
-        int minValue = calcurateMinValue(inputs);
+        int[] minValues = calcurateMinValue(inputs);
         int[] maxValues = calcurateMaxValues(inputs);
-        return new PeakAndValley(minValue, maxValues);
+        return new PeakAndValley(minValues, maxValues);
     }
 
-    private int calcurateMinValue(int[] array) {
+    private int[] calcurateMinValue(int[] array) {
+        ArrayList<Integer> intMins = new ArrayList<>();
         int intMin = array[0];
 
         for(int i = 1; i < array.length; i++) {
@@ -20,7 +21,14 @@ public class PeakAndValleyCalculator {
             }
         }
 
-        return  intMin;
+        for(int i = 0; i < array.length; i++) {
+            if(array[i] == intMin) {
+                intMins.add(intMin);
+            }
+        }
+
+        int[] resultArray = intMins.stream().mapToInt(i -> i).toArray();
+        return resultArray;
     }
 
     private int[] calcurateMaxValues(int[] array) {

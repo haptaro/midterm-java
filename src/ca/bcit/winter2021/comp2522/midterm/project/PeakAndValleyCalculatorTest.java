@@ -19,7 +19,8 @@ class PeakAndValleyCalculatorTest {
         PeakAndValleyCalculator calculator = new PeakAndValleyCalculator();
         int[] input = new int[] {6, 1, 4};
         PeakAndValley peakAndValley = calculator.calcurate(input);
-        assertEquals(peakAndValley.getValley(),1);
+        int[] expectedValleys = new int[] {1};
+        assertTrue(Arrays.equals(peakAndValley.getValley(), expectedValleys));
         int[] expectedPeak = new int[] {6};
         assertTrue(Arrays.equals(peakAndValley.getPeak(), expectedPeak));
     }
@@ -29,7 +30,8 @@ class PeakAndValleyCalculatorTest {
         PeakAndValleyCalculator calculator = new PeakAndValleyCalculator();
         int[] input = new int[] {2, 6, 6, 6, 3};
         PeakAndValley peakAndValley = calculator.calcurate(input);
-        assertEquals(peakAndValley.getValley(),2);
+        int[] expectedValleys = new int[] {2};
+        assertTrue(Arrays.equals(peakAndValley.getValley(), expectedValleys));
     }
 
     @Test
