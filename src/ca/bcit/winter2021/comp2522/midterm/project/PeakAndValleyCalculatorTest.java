@@ -5,9 +5,11 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PeakAndValleyCalculatorTest {
+    private PeakAndValleyCalculator calculator;
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
+        calculator = new PeakAndValleyCalculator();
     }
 
     @org.junit.jupiter.api.AfterEach
@@ -16,7 +18,6 @@ class PeakAndValleyCalculatorTest {
 
     @Test
     void test_calcurate_part1() {
-        PeakAndValleyCalculator calculator = new PeakAndValleyCalculator();
         int[] input = new int[] {6, 1, 4};
         PeakAndValley peakAndValley = calculator.calcurate(input);
         int[] expectedValleys = new int[] {1};
@@ -26,26 +27,7 @@ class PeakAndValleyCalculatorTest {
     }
 
     @Test
-    void test_calcurate_part2() {
-        PeakAndValleyCalculator calculator = new PeakAndValleyCalculator();
-        int[] input = new int[] {2, 6, 6, 6, 3};
-        PeakAndValley peakAndValley = calculator.calcurate(input);
-        int[] expectedValleys = new int[] {2};
-        assertTrue(Arrays.equals(peakAndValley.getValley(), expectedValleys));
-    }
-
-    @Test
-    void test_calcurate_part3() {
-        PeakAndValleyCalculator calculator = new PeakAndValleyCalculator();
-        int[] input = new int[] {2, 6, 6, 6, 3};
-        PeakAndValley peakAndValley = calculator.calcurate(input);
-        int[] expectedPeak = new int[] {6, 6, 6};
-        assertTrue(Arrays.equals(peakAndValley.getPeak(), expectedPeak));
-    }
-
-    @Test
     void test_technical_report_1() {
-        PeakAndValleyCalculator calculator = new PeakAndValleyCalculator();
         int[] input = new int[] {2, 6, 6, 6, 3};
         PeakAndValley peakAndValley = calculator.calcurate(input);
         int[] expectedValley = new int[] {2};
