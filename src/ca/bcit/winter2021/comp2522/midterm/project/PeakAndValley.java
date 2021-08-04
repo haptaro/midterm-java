@@ -13,11 +13,11 @@ public class PeakAndValley {
         this.peaks = peaks;
     }
 
-    public int[] getValley() {
+    public int[] getValleys() {
         return valleys;
     }
 
-    public int[] getPeak() {
+    public int[] getPeaks() {
         return peaks;
     }
 }
