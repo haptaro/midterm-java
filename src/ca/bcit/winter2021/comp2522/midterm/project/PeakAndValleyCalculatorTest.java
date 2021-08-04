@@ -20,10 +20,21 @@ class PeakAndValleyCalculatorTest {
     }
 
     @Test
-    void test_calcurate() {
+    void test_calcurate_part1() {
         PeakAndValleyCalculator calculator = new PeakAndValleyCalculator();
         int[] input = new int[] {6, 1, 4};
         PeakAndValley peakAndValley = calculator.calcurate(input);
         assertEquals(peakAndValley.getValley(),1);
+        assertEquals(peakAndValley.getPeak(), 6);
+    }
+
+    @Test
+    void test_calcurate_part2() {
+        PeakAndValleyCalculator calculator = new PeakAndValleyCalculator();
+        int[] input = new int[] {2, 6, 6, 6, 3};
+        PeakAndValley peakAndValley = calculator.calcurate(input);
+        assertEquals(peakAndValley.getValley(),2);
+//        int[] expectedPeak = new int[] {6, 6, 6};
+//        assertEquals(peakAndValley.getPeak(), expectedPeak);
     }
 }
