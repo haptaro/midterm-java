@@ -8,9 +8,10 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
-
+    private Game game;
     @BeforeEach
     void setUp() {
+        game = new Game();
     }
 
     @Test
@@ -56,11 +57,15 @@ class GameTest {
         transformers.add(bluestreak);
         transformers.add(hubcap);
 
-        Game game = new Game();
         Result result = game.fight(transformers);
 
         assertEquals(result.numberOfBattles, 1);
         assertEquals(result.winningTeam, "Soundwave");
         assertEquals(result.survivingMembersOfLosingTeam, "Hubcap");
+    }
+
+    @Test
+    void test_sample2() {
+
     }
 }
