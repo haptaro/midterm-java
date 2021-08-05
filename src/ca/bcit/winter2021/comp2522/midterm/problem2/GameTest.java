@@ -140,4 +140,42 @@ class GameTest {
         assertEquals(result.winningTeam, "Predaking");
         assertEquals(result.survivingMembersOfLosingTeam, "");
     }
+
+    @Test
+    void test_battle_with_basic_transformers() {
+        Transformer soundwave = new Transformer(
+                "Soundwave",
+                TransformersType.DECEPTION,
+                8,
+                9,
+                2,
+                6,
+                7,
+                5,
+                6,
+                10
+        ); // 31
+
+        Transformer bluestreak = new Transformer(
+                "Bluestreak",
+                TransformersType.AUTOBOT,
+                6,
+                6,
+                7,
+                9,
+                5,
+                2,
+                9,
+                7
+        ); // 37
+
+        ArrayList<Transformer> transformers = new ArrayList<>();
+        transformers.add(soundwave);
+        transformers.add(bluestreak);
+        Result result = game.fight(transformers);
+
+        assertEquals(1, result.numberOfBattles);
+        assertEquals("Bluestreak", result.winningTeam);
+        assertEquals("", result.survivingMembersOfLosingTeam);
+    }
 }
