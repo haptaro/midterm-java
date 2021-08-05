@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class TransformersSorter {
     // TODO: It's possible Stream#filter as well
-    public ArrayList<TransformersTeam> sort(ArrayList<TransformersTeam> transformers) {
+    public ArrayList<Transformer> sort(ArrayList<Transformer> transformers) {
         Collections.sort(transformers);
         return transformers;
     }

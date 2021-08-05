@@ -17,7 +17,7 @@ class TransformersSorterTest {
 
     @Test
     void test_sort_one() {
-        TransformersTeam bluestreak = new TransformersTeam(
+        Transformer bluestreak = new Transformer(
                 "Bluestreak",
                 TransformersType.AUTOBOT,
                 6,
@@ -29,7 +29,7 @@ class TransformersSorterTest {
                 9,
                 7
         );
-        ArrayList<TransformersTeam> transformers = new ArrayList<>();
+        ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(bluestreak);
         sorter.sort(transformers);
 
@@ -38,7 +38,7 @@ class TransformersSorterTest {
 
     @Test
     void test_sort_two() {
-    TransformersTeam bluestreak = new TransformersTeam(
+    Transformer bluestreak = new Transformer(
             "Bluestreak",
             TransformersType.AUTOBOT,
             6,
@@ -50,7 +50,7 @@ class TransformersSorterTest {
             9,
             7
     );
-    TransformersTeam hubcap = new TransformersTeam(
+    Transformer hubcap = new Transformer(
             "Hubcap",
             TransformersType.AUTOBOT,
             4,
@@ -62,7 +62,7 @@ class TransformersSorterTest {
             4,
             4
     );
-        ArrayList<TransformersTeam> transformers = new ArrayList<>();
+        ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(bluestreak);
         transformers.add(hubcap);
         sorter.sort(transformers);
@@ -73,7 +73,7 @@ class TransformersSorterTest {
 
     @Test
     void test_sort_three() {
-        TransformersTeam bluestreak = new TransformersTeam(
+        Transformer bluestreak = new Transformer(
                 "Bluestreak",
                 TransformersType.AUTOBOT,
                 6,
@@ -85,7 +85,7 @@ class TransformersSorterTest {
                 9,
                 7
         );
-        TransformersTeam hubcap = new TransformersTeam(
+        Transformer hubcap = new Transformer(
                 "Hubcap",
                 TransformersType.AUTOBOT,
                 4,
@@ -97,7 +97,7 @@ class TransformersSorterTest {
                 4,
                 4
         );
-        TransformersTeam rewind = new TransformersTeam(
+        Transformer rewind = new Transformer(
                 "Rewind",
                 TransformersType.AUTOBOT,
                 4,
@@ -109,7 +109,7 @@ class TransformersSorterTest {
                 4,
                 8
         );
-        ArrayList<TransformersTeam> transformers = new ArrayList<>();
+        ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(bluestreak);
         transformers.add(hubcap);
         transformers.add(rewind);
@@ -122,7 +122,7 @@ class TransformersSorterTest {
 
     @Test
     void test_sort_four() {
-        TransformersTeam bluestreak = new TransformersTeam(
+        Transformer bluestreak = new Transformer(
                 "Bluestreak",
                 TransformersType.AUTOBOT,
                 6,
@@ -134,7 +134,7 @@ class TransformersSorterTest {
                 9,
                 7
         );
-        TransformersTeam hubcap = new TransformersTeam(
+        Transformer hubcap = new Transformer(
                 "Hubcap",
                 TransformersType.AUTOBOT,
                 4,
@@ -146,7 +146,7 @@ class TransformersSorterTest {
                 4,
                 4
         );
-        TransformersTeam rewind = new TransformersTeam(
+        Transformer rewind = new Transformer(
                 "Rewind",
                 TransformersType.AUTOBOT,
                 4,
@@ -158,7 +158,7 @@ class TransformersSorterTest {
                 4,
                 8
         );
-        TransformersTeam grimlock = new TransformersTeam(
+        Transformer grimlock = new Transformer(
                 "Grimlock",
                 TransformersType.AUTOBOT,
                 10,
@@ -170,7 +170,7 @@ class TransformersSorterTest {
                 8,
                 10
         );
-        ArrayList<TransformersTeam> transformers = new ArrayList<>();
+        ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(bluestreak);
         transformers.add(hubcap);
         transformers.add(rewind);

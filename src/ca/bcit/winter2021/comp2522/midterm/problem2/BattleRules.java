@@ -1,10 +1,10 @@
 package ca.bcit.winter2021.comp2522.midterm.problem2;
 
 public class BattleRules {
-    private TransformersTeam deceptionTransformer;
-    private TransformersTeam autobotTransformer;
+    private Transformer deceptionTransformer;
+    private Transformer autobotTransformer;
 
-    public BattleRules(TransformersTeam deceptionTransformer, TransformersTeam autobotTransformer) {
+    public BattleRules(Transformer deceptionTransformer, Transformer autobotTransformer) {
         this.deceptionTransformer = deceptionTransformer;
         this.autobotTransformer = autobotTransformer;
     }

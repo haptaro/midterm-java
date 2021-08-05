@@ -19,7 +19,7 @@ class GameTest {
 
     @Test
     void test_sample() {
-        TransformersTeam soundwave = new TransformersTeam(
+        Transformer soundwave = new Transformer(
                 "Soundwave",
                 TransformersType.DECEPTION,
                 8,
@@ -31,7 +31,7 @@ class GameTest {
                 6,
                 10
         );
-        TransformersTeam bluestreak = new TransformersTeam(
+        Transformer bluestreak = new Transformer(
                 "Bluestreak",
                 TransformersType.AUTOBOT,
                 6,
@@ -43,7 +43,7 @@ class GameTest {
                 9,
                 7
         );
-        TransformersTeam hubcap = new TransformersTeam(
+        Transformer hubcap = new Transformer(
                 "Hubcap",
                 TransformersType.AUTOBOT,
                 4,
@@ -55,7 +55,7 @@ class GameTest {
                 4,
                 4
         );
-        ArrayList<TransformersTeam> transformers = new ArrayList<>();
+        ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
         transformers.add(bluestreak);
         transformers.add(hubcap);
@@ -69,7 +69,7 @@ class GameTest {
 
     @Test
     void test_whenTransformerNamedOptimusPrimeOrPredakingWinsAnytime() {
-        TransformersTeam soundwave = new TransformersTeam(
+        Transformer soundwave = new Transformer(
                 "Soundwave",
                 TransformersType.DECEPTION,
                 8,
@@ -81,7 +81,7 @@ class GameTest {
                 6,
                 10
         );
-        TransformersTeam optimusPrime = new TransformersTeam(
+        Transformer optimusPrime = new Transformer(
                 "Optimus Prime",
                 TransformersType.AUTOBOT,
                 1,
@@ -94,7 +94,7 @@ class GameTest {
                 7
         );
 
-        ArrayList<TransformersTeam> transformers = new ArrayList<>();
+        ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
         transformers.add(optimusPrime);
         Result result = game.fight(transformers);

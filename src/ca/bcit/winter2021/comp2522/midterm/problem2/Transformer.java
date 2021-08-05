@@ -1,9 +1,7 @@
 package ca.bcit.winter2021.comp2522.midterm.problem2;
 
-import ca.bcit.winter2021.comp2522.midterm.question2.Road;
-
 // FIXME: If transformers are limited, they should be used by enum actually
-public class TransformersTeam implements Comparable<TransformersTeam> {
+public class Transformer implements Comparable<Transformer> {
     public String name;
     public TransformersType type;
     public int strength;
@@ -15,16 +13,16 @@ public class TransformersTeam implements Comparable<TransformersTeam> {
     public int firepower;
     public int skill;
 
-    public TransformersTeam(String name,
-                            TransformersType type,
-                            int strength,
-                            int intelligence,
-                            int speed,
-                            int endurance,
-                            int rank,
-                            int courage,
-                            int firepower,
-                            int skill) {
+    public Transformer(String name,
+                       TransformersType type,
+                       int strength,
+                       int intelligence,
+                       int speed,
+                       int endurance,
+                       int rank,
+                       int courage,
+                       int firepower,
+                       int skill) {
         this.name = name;
         this.type = type;
         this.strength = strength;
@@ -38,7 +36,7 @@ public class TransformersTeam implements Comparable<TransformersTeam> {
     }
 
     @Override
-    public int compareTo(TransformersTeam t){
+    public int compareTo(Transformer t){
         return  this.rank - t.rank;
     }
 }
