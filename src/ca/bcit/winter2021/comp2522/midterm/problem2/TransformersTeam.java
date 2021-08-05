@@ -1,7 +1,9 @@
 package ca.bcit.winter2021.comp2522.midterm.problem2;
 
+import ca.bcit.winter2021.comp2522.midterm.question2.Road;
+
 // FIXME: If transformers are limited, they should be used by enum actually
-public class TransformersTeam {
+public class TransformersTeam implements Comparable<TransformersTeam> {
     public String name;
     public TransformersType type;
     public int strength;
@@ -33,5 +35,10 @@ public class TransformersTeam {
         this.courage = courage;
         this.firepower = firepower;
         this.skill = skill;
+    }
+
+    @Override
+    public int compareTo(TransformersTeam t){
+        return  this.rank - t.rank;
     }
 }
