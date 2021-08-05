@@ -1,5 +1,6 @@
 package ca.bcit.winter2021.comp2522.midterm.problem2;
 
+// FIXME: If transformers are limited, they should be used by enum actually
 public class TransformersTeam {
     public String name;
     public TransformersType type;

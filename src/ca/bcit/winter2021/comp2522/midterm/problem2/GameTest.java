@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// refs:
+// http://www.ntfa.net/ntfa/techspecs/index.php?cat=Gen1&group=DeceptPZ&char=Rampage
+
 class GameTest {
     private Game game;
     @BeforeEach
@@ -65,7 +68,39 @@ class GameTest {
     }
 
     @Test
-    void test_sample2() {
+    void test_whenTransformerNamedOptimusPrimeOrPredakingWinsAnytime() {
+        TransformersTeam soundwave = new TransformersTeam(
+                "Soundwave",
+                TransformersType.DECEPTION,
+                8,
+                9,
+                2,
+                6,
+                7,
+                5,
+                6,
+                10
+        );
+        TransformersTeam optimusPrime = new TransformersTeam(
+                "Optimus Prime",
+                TransformersType.AUTOBOT,
+                1,
+                6,
+                8,
+                9,
+                5,
+                2,
+                9,
+                7
+        );
 
+        ArrayList<TransformersTeam> transformers = new ArrayList<>();
+        transformers.add(soundwave);
+        transformers.add(optimusPrime);
+        Result result = game.fight(transformers);
+
+        assertEquals(result.numberOfBattles, 1);
+        assertEquals(result.winningTeam, "Optimus Prime");
+        assertEquals(result.survivingMembersOfLosingTeam, "");
     }
 }
