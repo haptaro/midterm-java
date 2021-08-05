@@ -68,7 +68,7 @@ class GameTest {
     }
 
     @Test
-    void test_whenTransformerNamedOptimusPrimeOrPredakingWinsAnytime() {
+    void test_whenTransformerNamedOptimusPrimeWinsAnytime() {
         Transformer soundwave = new Transformer(
                 "Soundwave",
                 TransformersType.DECEPTION,
@@ -101,6 +101,43 @@ class GameTest {
 
         assertEquals(result.numberOfBattles, 1);
         assertEquals(result.winningTeam, "Optimus Prime");
+        assertEquals(result.survivingMembersOfLosingTeam, "");
+    }
+
+    @Test
+    void test_whenTransformerNamedPredakingWinsAnytime() {
+        Transformer predaking = new Transformer(
+                "Predaking",
+                TransformersType.DECEPTION,
+                10,
+                5,
+                0,
+                8,
+                7,
+                9,
+                9,
+                8
+        );
+        Transformer bluestreak = new Transformer(
+                "Bluestreak",
+                TransformersType.AUTOBOT,
+                6,
+                6,
+                7,
+                9,
+                5,
+                2,
+                9,
+                7
+        );
+
+        ArrayList<Transformer> transformers = new ArrayList<>();
+        transformers.add(predaking);
+        transformers.add(bluestreak);
+        Result result = game.fight(transformers);
+
+        assertEquals(result.numberOfBattles, 1);
+        assertEquals(result.winningTeam, "Predaking");
         assertEquals(result.survivingMembersOfLosingTeam, "");
     }
 }

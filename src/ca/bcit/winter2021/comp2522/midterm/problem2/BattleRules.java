@@ -16,12 +16,19 @@ public class BattleRules {
                     "Optimus Prime",
                     ""
             );
-        } else {
+        }
+
+        if(deceptionTransformer.name == "Predaking") {
             return new Result(
                     1,
-                    "Soundwave",
-                    "Hubcap"
+                    "Predaking",
+                    ""
             );
         }
+        return new Result(
+                1,
+                "Soundwave",
+                "Hubcap"
+        );
     }
 }
