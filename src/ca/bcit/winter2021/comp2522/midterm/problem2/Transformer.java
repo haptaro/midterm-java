@@ -13,6 +13,11 @@ public class Transformer implements Comparable<Transformer> {
     public int firepower;
     public int skill;
 
+    // TODO: if you use Kotlin, should use computed property
+    public int overallRating() {
+        return strength + intelligence + speed + endurance + firepower;
+    }
+
     public Transformer(String name,
                        TransformersType type,
                        int strength,
