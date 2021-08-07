@@ -17,18 +17,7 @@ class TransformersSorterTest {
 
     @Test
     void test_sort_one() {
-        Transformer bluestreak = new Transformer(
-                "Bluestreak",
-                TransformersType.AUTOBOT,
-                6,
-                6,
-                7,
-                9,
-                5,
-                2,
-                9,
-                7
-        );
+        Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK);
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(bluestreak);
         sorter.sort(transformers);
@@ -38,30 +27,8 @@ class TransformersSorterTest {
 
     @Test
     void test_sort_two() {
-    Transformer bluestreak = new Transformer(
-            "Bluestreak",
-            TransformersType.AUTOBOT,
-            6,
-            6,
-            7,
-            9,
-            5,
-            2,
-            9,
-            7
-    );
-    Transformer hubcap = new Transformer(
-            "Hubcap",
-            TransformersType.AUTOBOT,
-            4,
-            4,
-            4,
-            4,
-            4,
-            4,
-            4,
-            4
-    );
+    Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK);
+    Transformer hubcap = TestDataFactory.fixture(FixtureName.HUBCAP);
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(bluestreak);
         transformers.add(hubcap);
@@ -73,42 +40,10 @@ class TransformersSorterTest {
 
     @Test
     void test_sort_three() {
-        Transformer bluestreak = new Transformer(
-                "Bluestreak",
-                TransformersType.AUTOBOT,
-                6,
-                6,
-                7,
-                9,
-                5,
-                2,
-                9,
-                7
-        );
-        Transformer hubcap = new Transformer(
-                "Hubcap",
-                TransformersType.AUTOBOT,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4
-        );
-        Transformer rewind = new Transformer(
-                "Rewind",
-                TransformersType.AUTOBOT,
-                4,
-                9,
-                2,
-                7,
-                6,
-                7,
-                4,
-                8
-        );
+        Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK);
+        Transformer hubcap = TestDataFactory.fixture(FixtureName.HUBCAP);
+        Transformer rewind = TestDataFactory.fixture(FixtureName.REWIND);
+
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(bluestreak);
         transformers.add(hubcap);
@@ -122,54 +57,11 @@ class TransformersSorterTest {
 
     @Test
     void test_sort_four() {
-        Transformer bluestreak = new Transformer(
-                "Bluestreak",
-                TransformersType.AUTOBOT,
-                6,
-                6,
-                7,
-                9,
-                5,
-                2,
-                9,
-                7
-        );
-        Transformer hubcap = new Transformer(
-                "Hubcap",
-                TransformersType.AUTOBOT,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4
-        );
-        Transformer rewind = new Transformer(
-                "Rewind",
-                TransformersType.AUTOBOT,
-                4,
-                9,
-                2,
-                7,
-                6,
-                7,
-                4,
-                8
-        );
-        Transformer grimlock = new Transformer(
-                "Grimlock",
-                TransformersType.AUTOBOT,
-                10,
-                7,
-                3,
-                10,
-                9,
-                10,
-                8,
-                10
-        );
+        Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK);
+        Transformer hubcap = TestDataFactory.fixture(FixtureName.HUBCAP);
+        Transformer rewind = TestDataFactory.fixture(FixtureName.REWIND);
+        Transformer grimlock = TestDataFactory.fixture(FixtureName.GRIMLOCK);
+
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(bluestreak);
         transformers.add(hubcap);

@@ -21,31 +21,8 @@ class OutputFormatterTest {
         String expectedWinningTeam = "The winning team: (Deceptions): Soundwave";
         String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: (Autobots): Hubcap";
 
-        Transformer soundwave = new Transformer(
-                "Soundwave",
-                TransformersType.DECEPTION,
-                8,
-                9,
-                2,
-                6,
-                7,
-                5,
-                6,
-                10
-        );
-
-        Transformer hubcap = new Transformer(
-                "Hubcap",
-                TransformersType.AUTOBOT,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4
-        );
+        Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE);
+        Transformer hubcap = TestDataFactory.fixture(FixtureName.HUBCAP);
 
         GameResult result = new GameResult(
                 1,
@@ -64,18 +41,7 @@ class OutputFormatterTest {
         String expectedWinningTeam = "The winning team: (Deceptions): Soundwave";
         String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: ";
 
-        Transformer soundwave = new Transformer(
-                "Soundwave",
-                TransformersType.DECEPTION,
-                8,
-                9,
-                2,
-                6,
-                7,
-                5,
-                6,
-                10
-        );
+        Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE);
 
         GameResult result = new GameResult(
                 1,
@@ -94,18 +60,7 @@ class OutputFormatterTest {
         String expectedWinningTeam = "The winning team: (Deceptions): Predaking";
         String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: ";
 
-        Transformer predaking = new Transformer(
-                "Predaking",
-                TransformersType.DECEPTION,
-                10,
-                5,
-                0,
-                8,
-                7,
-                9,
-                9,
-                8
-        );
+        Transformer predaking = TestDataFactory.fixture(FixtureName.PREDAKING);
 
         GameResult result = new GameResult(
                 2,
@@ -124,18 +79,7 @@ class OutputFormatterTest {
         String expectedWinningTeam = "The winning team: (Autobots): Optimus Prime";
         String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: ";
 
-        Transformer optimusPrime = new Transformer(
-                "Optimus Prime",
-                TransformersType.AUTOBOT,
-                1,
-                6,
-                8,
-                9,
-                5,
-                2,
-                9,
-                7
-        );
+        Transformer optimusPrime = TestDataFactory.fixture(FixtureName.OPTIMUSPRIME);
 
         GameResult result = new GameResult(
                 1,
@@ -154,58 +98,8 @@ class OutputFormatterTest {
         String expectedWinningTeam = "The winning team: (Autobots): Computron";
         String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: (Deceptions): Barrage";
 
-
-//        Transformer razorclaw = new Transformer(
-//                "Razorclaw",
-//                TransformersType.DECEPTION,
-//                4,
-//                5,
-//                3,
-//                6,
-//                7,
-//                2,
-//                6,
-//                10
-//        );
-
-        Transformer barrage = new Transformer(
-                "Barrage",
-                TransformersType.DECEPTION,
-                8,
-                4,
-                7,
-                1,
-                9,
-                2,
-                3,
-                4
-        );
-
-        Transformer computron = new Transformer(
-                "Computron",
-                TransformersType.AUTOBOT,
-                3,
-                5,
-                2,
-                1,
-                9,
-                2,
-                3,
-                2
-        );
-
-//        Transformer freeway = new Transformer(
-//                "Freeway",
-//                TransformersType.AUTOBOT,
-//                3,
-//                3,
-//                9,
-//                9,
-//                2,
-//                2,
-//                7,
-//                8
-//        );
+        Transformer barrage = TestDataFactory.fixture(FixtureName.BARRAGE);
+        Transformer computron = TestDataFactory.fixture(FixtureName.COMPUTRON);
 
         GameResult result = new GameResult(
                 2,

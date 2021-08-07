@@ -1,10 +1,7 @@
 package ca.bcit.winter2021.comp2522.midterm.problem2;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 // refs:
@@ -19,42 +16,10 @@ class GameTest {
 
     @Test
     void test_sample() {
-        Transformer soundwave = new Transformer(
-                "Soundwave",
-                TransformersType.DECEPTION,
-                8,
-                9,
-                2,
-                6,
-                7,
-                5,
-                6,
-                10
-        );
-        Transformer bluestreak = new Transformer(
-                "Bluestreak",
-                TransformersType.AUTOBOT,
-                6,
-                6,
-                7,
-                9,
-                5,
-                2,
-                9,
-                7
-        );
-        Transformer hubcap = new Transformer(
-                "Hubcap",
-                TransformersType.AUTOBOT,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4,
-                4
-        );
+        Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE);
+        Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK);
+        Transformer hubcap = TestDataFactory.fixture(FixtureName.HUBCAP);
+
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
         transformers.add(bluestreak);
@@ -63,36 +28,14 @@ class GameTest {
         GameResult gameResult = game.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
-        assertEquals("DECEPTION", gameResult.winningTeam);
-        assertEquals("Hubcap", gameResult.survivingMembersOfLosingTeam);
+        assertEquals("DECEPTION", gameResult.winningTeam.type.name());
+        assertEquals("Hubcap", gameResult.survivingMembersOfLosingTeam.name);
     }
 
     @Test
     void test_whenTransformerNamedOptimusPrimeWinsAnytime() {
-        Transformer soundwave = new Transformer(
-                "Soundwave",
-                TransformersType.DECEPTION,
-                8,
-                9,
-                2,
-                6,
-                7,
-                5,
-                6,
-                10
-        );
-        Transformer optimusPrime = new Transformer(
-                "Optimus Prime",
-                TransformersType.AUTOBOT,
-                1,
-                6,
-                8,
-                9,
-                5,
-                2,
-                9,
-                7
-        );
+        Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE);
+        Transformer optimusPrime = TestDataFactory.fixture(FixtureName.OPTIMUSPRIME);
 
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
@@ -100,36 +43,14 @@ class GameTest {
         GameResult gameResult = game.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
-        assertEquals("AUTOBOT", gameResult.winningTeam);
-        assertEquals("", gameResult.survivingMembersOfLosingTeam);
+        assertEquals("AUTOBOT", gameResult.winningTeam.type.name());
+        assertEquals("", gameResult.survivingMembersOfLosingTeam.name);
     }
 
     @Test
     void test_whenTransformerNamedPredakingWinsAnytime() {
-        Transformer predaking = new Transformer(
-                "Predaking",
-                TransformersType.DECEPTION,
-                10,
-                5,
-                0,
-                8,
-                7,
-                9,
-                9,
-                8
-        );
-        Transformer bluestreak = new Transformer(
-                "Bluestreak",
-                TransformersType.AUTOBOT,
-                6,
-                6,
-                7,
-                9,
-                5,
-                2,
-                9,
-                7
-        );
+        Transformer predaking = TestDataFactory.fixture(FixtureName.PREDAKING);
+        Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK);
 
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(predaking);
@@ -137,37 +58,14 @@ class GameTest {
         GameResult gameResult = game.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
-        assertEquals("DECEPTION", gameResult.winningTeam);
-        assertEquals("", gameResult.survivingMembersOfLosingTeam);
+        assertEquals("DECEPTION", gameResult.winningTeam.type.name());
+        assertEquals("", gameResult.survivingMembersOfLosingTeam.name);
     }
 
     @Test
     void test_battle_with_basic_transformers() {
-        Transformer soundwave = new Transformer(
-                "Soundwave",
-                TransformersType.DECEPTION,
-                8,
-                9,
-                2,
-                6,
-                7,
-                5,
-                6,
-                10
-        ); // 31
-
-        Transformer bluestreak = new Transformer(
-                "Bluestreak",
-                TransformersType.AUTOBOT,
-                6,
-                6,
-                7,
-                9,
-                5,
-                2,
-                9,
-                7
-        ); // 37
+        Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE); // 31
+        Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK); // 37
 
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
@@ -175,37 +73,14 @@ class GameTest {
         GameResult gameResult = game.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
-        assertEquals("AUTOBOT", gameResult.winningTeam);
-        assertEquals("", gameResult.survivingMembersOfLosingTeam);
+        assertEquals("AUTOBOT", gameResult.winningTeam.type.name());
+        assertEquals("", gameResult.survivingMembersOfLosingTeam.name);
     }
 
     @Test
     void test_battle_with_tie_transformers() {
-        Transformer soundwave = new Transformer(
-                "Soundwave",
-                TransformersType.DECEPTION,
-                8,
-                9,
-                2,
-                6,
-                7,
-                5,
-                6,
-                10
-        ); // 31
-
-        Transformer testTransformer = new Transformer(
-                "Test",
-                TransformersType.AUTOBOT,
-                8,
-                9,
-                2,
-                6,
-                7,
-                5,
-                6,
-                10
-        ); // 31
+        Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE); // 31
+        Transformer testTransformer = TestDataFactory.fixture(FixtureName.TEST); // 31
 
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
@@ -213,7 +88,7 @@ class GameTest {
         GameResult gameResult = game.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
-        assertEquals("", gameResult.winningTeam);
-        assertEquals("", gameResult.survivingMembersOfLosingTeam);
+        assertEquals("", gameResult.winningTeam.type.name());
+        assertEquals("", gameResult.survivingMembersOfLosingTeam.name);
     }
 }
