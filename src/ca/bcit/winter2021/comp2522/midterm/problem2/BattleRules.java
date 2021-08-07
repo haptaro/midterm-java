@@ -9,26 +9,21 @@ public class BattleRules {
         this.autobotTransformer = autobotTransformer;
     }
 
-    public Result buttle() {
+    public BattleResult buttle() {
         if (autobotTransformer.name == "Optimus Prime") {
-            return new Result(
-                    1,
-                    "Optimus Prime",
-                    ""
-            );
+            return BattleResult.AUTOBOT_SPECIAL_WIN;
         }
 
         if(deceptionTransformer.name == "Predaking") {
-            return new Result(
-                    1,
-                    "Predaking",
-                    ""
-            );
+            return BattleResult.DECEPTION_SPECIAL_WIN;
         }
-        return new Result(
-                1,
-                "Soundwave",
-                "Hubcap"
-        );
+
+        if(autobotTransformer.overallRating() == deceptionTransformer.overallRating()) {
+            return BattleResult.BOTH_DESTROYED;
+        } else if(autobotTransformer.overallRating() > deceptionTransformer.overallRating()) {
+            return BattleResult.AUTOBOT_WIN;
+        } else {
+            return BattleResult.DECEPTION_WIN;
+        }
     }
 }

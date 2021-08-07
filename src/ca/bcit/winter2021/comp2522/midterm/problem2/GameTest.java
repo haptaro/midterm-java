@@ -60,11 +60,11 @@ class GameTest {
         transformers.add(bluestreak);
         transformers.add(hubcap);
 
-        Result result = game.fight(transformers);
+        GameResult gameResult = game.fight(transformers);
 
-        assertEquals(result.numberOfBattles, 1);
-        assertEquals(result.winningTeam, "Soundwave");
-        assertEquals(result.survivingMembersOfLosingTeam, "Hubcap");
+        assertEquals(1, gameResult.numberOfBattles);
+        assertEquals("DECEPTION", gameResult.winningTeam);
+        assertEquals("Hubcap", gameResult.survivingMembersOfLosingTeam);
     }
 
     @Test
@@ -97,11 +97,11 @@ class GameTest {
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
         transformers.add(optimusPrime);
-        Result result = game.fight(transformers);
+        GameResult gameResult = game.fight(transformers);
 
-        assertEquals(result.numberOfBattles, 1);
-        assertEquals(result.winningTeam, "Optimus Prime");
-        assertEquals(result.survivingMembersOfLosingTeam, "");
+        assertEquals(1, gameResult.numberOfBattles);
+        assertEquals("AUTOBOT", gameResult.winningTeam);
+        assertEquals("", gameResult.survivingMembersOfLosingTeam);
     }
 
     @Test
@@ -134,11 +134,11 @@ class GameTest {
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(predaking);
         transformers.add(bluestreak);
-        Result result = game.fight(transformers);
+        GameResult gameResult = game.fight(transformers);
 
-        assertEquals(result.numberOfBattles, 1);
-        assertEquals(result.winningTeam, "Predaking");
-        assertEquals(result.survivingMembersOfLosingTeam, "");
+        assertEquals(1, gameResult.numberOfBattles);
+        assertEquals("DECEPTION", gameResult.winningTeam);
+        assertEquals("", gameResult.survivingMembersOfLosingTeam);
     }
 
     @Test
@@ -172,10 +172,48 @@ class GameTest {
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
         transformers.add(bluestreak);
-        Result result = game.fight(transformers);
+        GameResult gameResult = game.fight(transformers);
 
-        assertEquals(1, result.numberOfBattles);
-        assertEquals("Bluestreak", result.winningTeam);
-        assertEquals("", result.survivingMembersOfLosingTeam);
+        assertEquals(1, gameResult.numberOfBattles);
+        assertEquals("AUTOBOT", gameResult.winningTeam);
+        assertEquals("", gameResult.survivingMembersOfLosingTeam);
+    }
+
+    @Test
+    void test_battle_with_tie_transformers() {
+        Transformer soundwave = new Transformer(
+                "Soundwave",
+                TransformersType.DECEPTION,
+                8,
+                9,
+                2,
+                6,
+                7,
+                5,
+                6,
+                10
+        ); // 31
+
+        Transformer testTransformer = new Transformer(
+                "Test",
+                TransformersType.AUTOBOT,
+                8,
+                9,
+                2,
+                6,
+                7,
+                5,
+                6,
+                10
+        ); // 31
+
+        ArrayList<Transformer> transformers = new ArrayList<>();
+        transformers.add(soundwave);
+        transformers.add(testTransformer);
+        GameResult gameResult = game.fight(transformers);
+
+        assertEquals(1, gameResult.numberOfBattles);
+        assertEquals("", gameResult.winningTeam);
+        assertEquals("", gameResult.survivingMembersOfLosingTeam);
     }
 }
