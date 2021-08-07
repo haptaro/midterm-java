@@ -8,9 +8,13 @@ public class OutputFormatter {
     }
 
     public String formatWinningTeam(GameResult gameResult) {
-        String teamName = gameResult.winningTeam.type.outPutTeamName();
-        String firstTransformerName = gameResult.winningTeam.name;
-        return String.format("The winning team: (%s): %s", teamName, firstTransformerName);
+        if(gameResult.winningTeam == null) {
+            return "The winning team: ";
+        } else {
+            String teamName = gameResult.winningTeam.type.outPutTeamName();
+            String firstTransformerName = gameResult.winningTeam.name;
+            return String.format("The winning team: (%s): %s", teamName, firstTransformerName);
+        }
     }
 
     public String formatSurvivingMembersOfLosingTeam(GameResult gameResult) {

@@ -111,4 +111,21 @@ class OutputFormatterTest {
         assertEquals(expectedWinningTeam, formatter.formatWinningTeam(result));
         assertEquals(expectedSurvivingMembersOfLosingTeam, formatter.formatSurvivingMembersOfLosingTeam(result));
     }
+
+    @Test
+    void test_format_six_for_tie() {
+        String expectedNumberOfBattles = "The number of battles: 1";
+        String expectedWinningTeam = "The winning team: ";
+        String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: ";
+
+        GameResult result = new GameResult(
+                1,
+                null,
+                null
+        );
+
+        assertEquals(expectedNumberOfBattles, formatter.formatNumberOfBattles(result));
+        assertEquals(expectedWinningTeam, formatter.formatWinningTeam(result));
+        assertEquals(expectedSurvivingMembersOfLosingTeam, formatter.formatSurvivingMembersOfLosingTeam(result));
+    }
 }
