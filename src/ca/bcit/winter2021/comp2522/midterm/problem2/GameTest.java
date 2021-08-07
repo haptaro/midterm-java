@@ -4,9 +4,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
-// refs:
-// http://www.ntfa.net/ntfa/techspecs/index.php?cat=Gen1&group=DeceptPZ&char=Rampage
-
 class GameTest {
     private Game game;
     @BeforeEach

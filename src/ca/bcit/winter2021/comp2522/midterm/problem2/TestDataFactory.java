@@ -1,5 +1,8 @@
 package ca.bcit.winter2021.comp2522.midterm.problem2;
 
+// refs:
+// http://www.ntfa.net/ntfa/techspecs/index.php?cat=Gen1&group=DeceptPZ&char=Rampage
+
 public class TestDataFactory {
     public static Transformer fixture(FixtureName name) {
         switch (name) {
