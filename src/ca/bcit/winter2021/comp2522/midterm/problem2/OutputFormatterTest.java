@@ -3,6 +3,8 @@ package ca.bcit.winter2021.comp2522.midterm.problem2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class OutputFormatterTest {
@@ -23,11 +25,13 @@ class OutputFormatterTest {
 
         Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE);
         Transformer hubcap = TestDataFactory.fixture(FixtureName.HUBCAP);
+        ArrayList<Transformer> restTransformers = new ArrayList<>();
+        restTransformers.add(hubcap);
 
         GameResult result = new GameResult(
                 1,
                 soundwave,
-                hubcap
+                restTransformers
         );
 
         assertEquals(expectedNumberOfBattles, formatter.formatNumberOfBattles(result));
@@ -98,13 +102,15 @@ class OutputFormatterTest {
         String expectedWinningTeam = "The winning team: (Autobots): Computron";
         String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: (Deceptions): Barrage";
 
-        Transformer barrage = TestDataFactory.fixture(FixtureName.BARRAGE);
         Transformer computron = TestDataFactory.fixture(FixtureName.COMPUTRON);
+        Transformer barrage = TestDataFactory.fixture(FixtureName.BARRAGE);
+        ArrayList<Transformer> restTransformers = new ArrayList<>();
+        restTransformers.add(barrage);
 
         GameResult result = new GameResult(
                 2,
                 computron,
-                barrage
+                restTransformers
         );
 
         assertEquals(expectedNumberOfBattles, formatter.formatNumberOfBattles(result));

@@ -132,4 +132,32 @@ class GameTest {
         assertEquals(expectedWinningTeam, game.formatedWinningTeam);
         assertEquals(expectedSurvivingMembersOfLosingTeam, game.formatedSurvivingMembersOfLosingTeam);
     }
+
+    @Test
+    void test_dataFile_fifthBattle() {
+        ArrayList<Transformer> transformers = new ArrayList<>();
+
+        Transformer predaking = TestDataFactory.fixture(FixtureName.PREDAKING); // rank: 7
+        Transformer cliffjumper = TestDataFactory.fixture(FixtureName.CLIFFJUMPER); // rank: 9
+        Transformer soundWave = TestDataFactory.fixture(FixtureName.SOUNDWAVE); // rank: 7
+        Transformer kickback = TestDataFactory.fixture(FixtureName.KICKBACK); // rank: 6
+
+        transformers.add(predaking);
+        transformers.add(cliffjumper);
+        transformers.add(soundWave);
+        transformers.add(kickback);
+
+        Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK);
+        transformers.add(bluestreak);
+
+        game.start(transformers);
+
+        String expectedNumberOfBattles = "The number of battles: 1";
+        String expectedWinningTeam = "The winning team: (Autobots): Bluestreak";
+        String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: (Deceptions): Predaking Soundwave Cliffjumper";
+
+        assertEquals(expectedNumberOfBattles, game.formatedNumberOfBattles);
+        assertEquals(expectedWinningTeam, game.formatedWinningTeam);
+        assertEquals(expectedSurvivingMembersOfLosingTeam, game.formatedSurvivingMembersOfLosingTeam);
+    }
 }

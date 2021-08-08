@@ -27,7 +27,7 @@ class BattleTest {
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals("DECEPTION", gameResult.winningTeam.type.name());
         // I don't know sort is ascending or descending, it lead to result of this
-        assertEquals("Bluestreak", gameResult.survivingMembersOfLosingTeam.name);
+        assertEquals("Bluestreak", gameResult.survivingMembersOfLosingTeam.get(0).name);
     }
 
     @Test

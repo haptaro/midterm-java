@@ -106,4 +106,25 @@ class TransformersSorterTest {
         assertEquals(transformers.get(5).name, megatron.name);
         assertEquals(transformers.get(6).name, cutthroat.name);
     }
+
+    @Test
+    void test_sort_six() {
+        ArrayList<Transformer> transformers = new ArrayList<>();
+
+        Transformer predaking = TestDataFactory.fixture(FixtureName.PREDAKING); // rank: 7
+        Transformer cliffjumper = TestDataFactory.fixture(FixtureName.CLIFFJUMPER); // rank: 9
+        Transformer soundWave = TestDataFactory.fixture(FixtureName.SOUNDWAVE); // rank: 7
+        Transformer kickback = TestDataFactory.fixture(FixtureName.KICKBACK); // rank: 6
+        transformers.add(predaking);
+        transformers.add(cliffjumper);
+        transformers.add(soundWave);
+        transformers.add(kickback);
+
+        sorter.sort(transformers);
+
+        assertEquals(transformers.get(0).name, kickback.name);
+        assertEquals(transformers.get(1).name, predaking.name);
+        assertEquals(transformers.get(2).name, soundWave.name);
+        assertEquals(transformers.get(3).name, cliffjumper.name);
+    }
 }

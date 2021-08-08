@@ -21,9 +21,12 @@ public class OutputFormatter {
         if(gameResult.survivingMembersOfLosingTeam == null) {
             return "The surviving members of the losing team: ";
         } else {
-            String teamName = gameResult.survivingMembersOfLosingTeam.type.outPutTeamName();
-            String firstTransformerName = gameResult.survivingMembersOfLosingTeam.name;
-            return String.format("The surviving members of the losing team: (%s): %s", teamName, firstTransformerName);
+            String survivingMembersOfLosingTeamString = "";
+            for (Transformer transformer : gameResult.survivingMembersOfLosingTeam) {
+                survivingMembersOfLosingTeamString = survivingMembersOfLosingTeamString + " " + transformer.name;
+            }
+            String teamName = gameResult.survivingMembersOfLosingTeam.get(0).type.outPutTeamName();
+            return String.format("The surviving members of the losing team: (%s):%s", teamName, survivingMembersOfLosingTeamString);
         }
     }
 }

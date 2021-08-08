@@ -90,7 +90,7 @@ public class Battle {
                 return  new GameResult(
                         buttleCount,
                         immutableSortedAutobotTransformers.get(0),
-                        sortedDeceptionTransformers.get(0)
+                        sortedDeceptionTransformers
                 );
             }
         } else {
@@ -98,13 +98,13 @@ public class Battle {
                 return  new GameResult(
                         buttleCount,
                         null,
-                        sortedAutobotTransformers.get(0)
+                        sortedAutobotTransformers
                 );
             } else {
                 return  new GameResult(
                         buttleCount,
                         immutableSortedDeceptionTransformers.get(0),
-                        sortedAutobotTransformers.get(0)
+                        sortedAutobotTransformers
                 );
             }
         }

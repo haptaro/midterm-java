@@ -99,7 +99,7 @@ public class TestDataFactory {
                 );
             case CLIFFJUMPER:
                 return new Transformer(
-                        "Barrage",
+                        "Cliffjumper",
                         TransformersType.DECEPTION,
                         8,
                         4,
