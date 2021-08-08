@@ -107,4 +107,29 @@ class GameTest {
         assertEquals(expectedWinningTeam, game.formatedWinningTeam);
         assertEquals(expectedSurvivingMembersOfLosingTeam, game.formatedSurvivingMembersOfLosingTeam);
     }
+
+    @Test
+    void test_dataFile_forthBattle() {
+        ArrayList<Transformer> transformers = new ArrayList<>();
+
+        Transformer razorclaw = TestDataFactory.fixture(FixtureName.RAZORCLAW); // rank: 7
+        Transformer barrage = TestDataFactory.fixture(FixtureName.BARRAGE); // rank: 9
+        transformers.add(razorclaw);
+        transformers.add(barrage);
+
+        Transformer computron = TestDataFactory.fixture(FixtureName.COMPUTRON); // rank: 9
+        Transformer freeway = TestDataFactory.fixture(FixtureName.FREEWAY); // rank: 2
+        transformers.add(computron);
+        transformers.add(freeway);
+
+        game.start(transformers);
+
+        String expectedNumberOfBattles = "The number of battles: 2";
+        String expectedWinningTeam = "The winning team: ";
+        String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: ";
+
+        assertEquals(expectedNumberOfBattles, game.formatedNumberOfBattles);
+        assertEquals(expectedWinningTeam, game.formatedWinningTeam);
+        assertEquals(expectedSurvivingMembersOfLosingTeam, game.formatedSurvivingMembersOfLosingTeam);
+    }
 }
