@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TransformersSorterTest {
-    // FIXME: If sort key is the same, what should I do?
+    // If sort key is the same, what should I do? I don't know send sort key
     // I don't know sorting, like ascending, descending
     // I decided ascending
     private  TransformersSorter sorter;

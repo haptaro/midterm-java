@@ -10,6 +10,10 @@ public class BattleRules {
     }
 
     public BattleResult buttle() {
+        if (autobotTransformer.name == "Optimus Prime" && deceptionTransformer.name == "Predaking") {
+            return BattleResult.BOTH_DESTROYED;
+        }
+
         if (autobotTransformer.name == "Optimus Prime") {
             return BattleResult.AUTOBOT_SPECIAL_WIN;
         }

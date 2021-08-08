@@ -27,6 +27,7 @@ public class Battle {
             BattleResult battleResult = rules.buttle();
             switch (battleResult) {
                 case BOTH_DESTROYED:
+                    buttleCount += 1;
                     deceptionWonCount += 1;
                     autobotWonCount += 1;
                     sortedDeceptionTransformers.remove(index);
@@ -43,6 +44,7 @@ public class Battle {
 
                 case DECEPTION_WIN:
                     deceptionWonCount += 1;
+                    buttleCount += 1;
                     sortedAutobotTransformers.remove(index);
                     break;
 
@@ -56,6 +58,7 @@ public class Battle {
 
                 case AUTOBOT_WIN:
                     autobotWonCount += 1;
+                    buttleCount += 1;
                     sortedDeceptionTransformers.remove(index);
                     break;
 
@@ -64,7 +67,6 @@ public class Battle {
                     break;
             }
 
-            buttleCount += 1;
             index++;
         }
 
