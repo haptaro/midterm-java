@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TransformersSorterTest {
     // FIXME: If sort key is the same, what should I do?
+    // I don't know sorting, like ascending, descending
+    // I decided ascending
     private  TransformersSorter sorter;
     @BeforeEach
     void setUp() {
@@ -57,10 +59,10 @@ class TransformersSorterTest {
 
     @Test
     void test_sort_four() {
-        Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK);
-        Transformer hubcap = TestDataFactory.fixture(FixtureName.HUBCAP);
-        Transformer rewind = TestDataFactory.fixture(FixtureName.REWIND);
-        Transformer grimlock = TestDataFactory.fixture(FixtureName.GRIMLOCK);
+        Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK); // rank: 5
+        Transformer hubcap = TestDataFactory.fixture(FixtureName.HUBCAP); // rank: 4
+        Transformer rewind = TestDataFactory.fixture(FixtureName.REWIND); // rank: 6
+        Transformer grimlock = TestDataFactory.fixture(FixtureName.GRIMLOCK); // rank: 9
 
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(bluestreak);

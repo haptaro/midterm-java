@@ -26,7 +26,8 @@ class GameTest {
 
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals("DECEPTION", gameResult.winningTeam.type.name());
-        assertEquals("Hubcap", gameResult.survivingMembersOfLosingTeam.name);
+        // I don't know sort is ascending or descending, it lead to result of this
+        assertEquals("Bluestreak", gameResult.survivingMembersOfLosingTeam.name);
     }
 
     @Test
@@ -41,7 +42,7 @@ class GameTest {
 
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals("AUTOBOT", gameResult.winningTeam.type.name());
-        assertEquals("", gameResult.survivingMembersOfLosingTeam.name);
+        assertEquals(null, gameResult.survivingMembersOfLosingTeam);
     }
 
     @Test
@@ -56,7 +57,7 @@ class GameTest {
 
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals("DECEPTION", gameResult.winningTeam.type.name());
-        assertEquals("", gameResult.survivingMembersOfLosingTeam.name);
+        assertEquals(null, gameResult.survivingMembersOfLosingTeam);
     }
 
     @Test
@@ -71,7 +72,7 @@ class GameTest {
 
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals("AUTOBOT", gameResult.winningTeam.type.name());
-        assertEquals("", gameResult.survivingMembersOfLosingTeam.name);
+        assertEquals(null, gameResult.survivingMembersOfLosingTeam);
     }
 
     @Test
@@ -85,7 +86,7 @@ class GameTest {
         GameResult gameResult = game.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
-        assertEquals("", gameResult.winningTeam.type.name());
-        assertEquals("", gameResult.survivingMembersOfLosingTeam.name);
+        assertEquals(null, gameResult.winningTeam);
+        assertEquals(null, gameResult.survivingMembersOfLosingTeam);
     }
 }

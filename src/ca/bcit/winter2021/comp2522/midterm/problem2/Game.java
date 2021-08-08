@@ -5,26 +5,24 @@ import java.util.ArrayList;
 
 public class Game {
     private TransformersSorter sorter = new TransformersSorter();
-    private int buttleCount = 1;
+    private int buttleCount = 0;
     private int deceptionWonCount = 0;
     private int autobotWonCount = 0;
 
     public GameResult fight(ArrayList<Transformer> transformers) {
         ArrayList<Transformer> deceptionTransformers = deceptionTransformers(transformers);
         ArrayList<Transformer> autobotTransformers = autobotTransformers(transformers);
+        int maxBattleCount = Math.min(deceptionTransformers.size(), autobotTransformers.size());
 
         ArrayList<Transformer> sortedDeceptionTransformers = sorter.sort(deceptionTransformers);
         ArrayList<Transformer> sortedAutobotTransformers = sorter.sort(autobotTransformers);
 
-        boolean isContinue = sortedAutobotTransformers.isEmpty() || sortedDeceptionTransformers.isEmpty();
         int index = 0;
-
-        while(isContinue){
+        while(!(buttleCount >= maxBattleCount)){
             BattleRules rules = new BattleRules(
                     sortedDeceptionTransformers.get(index),
                     sortedAutobotTransformers.get(index)
             );
-
 
             BattleResult battleResult = rules.buttle();
             switch (battleResult) {
@@ -36,6 +34,7 @@ public class Game {
                     break;
 
                 case DECEPTION_SPECIAL_WIN:
+                    buttleCount += 1;
                     return new GameResult(
                             buttleCount,
                             sortedDeceptionTransformers.get(0),
@@ -48,6 +47,7 @@ public class Game {
                     break;
 
                 case AUTOBOT_SPECIAL_WIN:
+                    buttleCount += 1;
                     return new GameResult(
                             buttleCount,
                             sortedAutobotTransformers.get(0),
@@ -68,18 +68,40 @@ public class Game {
             index++;
         }
 
-        if(autobotWonCount > deceptionWonCount) {
+        if(autobotWonCount == deceptionWonCount) {
             return  new GameResult(
                     buttleCount,
-                    sortedAutobotTransformers.get(0),
-                    sortedDeceptionTransformers.get(0)
+                    null,
+                    null
             );
+        } else if(autobotWonCount > deceptionWonCount) {
+            if(sortedDeceptionTransformers.isEmpty()) {
+                return  new GameResult(
+                        buttleCount,
+                        sortedAutobotTransformers.get(0),
+                        null
+                );
+            } else {
+                return  new GameResult(
+                        buttleCount,
+                        sortedAutobotTransformers.get(0),
+                        sortedDeceptionTransformers.get(0)
+                );
+            }
         } else {
-            return  new GameResult(
-                    buttleCount,
-                    sortedDeceptionTransformers.get(0),
-                    sortedAutobotTransformers.get(0)
-            );
+            if(sortedAutobotTransformers.isEmpty()) {
+                return  new GameResult(
+                        buttleCount,
+                        null,
+                        sortedAutobotTransformers.get(0)
+                );
+            } else {
+                return  new GameResult(
+                        buttleCount,
+                        sortedDeceptionTransformers.get(0),
+                        sortedAutobotTransformers.get(0)
+                );
+            }
         }
     }
 
