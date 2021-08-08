@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
-class GameTest {
-    private Game game;
+class BattleTest {
+    private Battle battle;
     @BeforeEach
     void setUp() {
-        game = new Game();
+        battle = new Battle();
     }
 
     @Test
@@ -22,7 +22,7 @@ class GameTest {
         transformers.add(bluestreak);
         transformers.add(hubcap);
 
-        GameResult gameResult = game.fight(transformers);
+        GameResult gameResult = battle.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals("DECEPTION", gameResult.winningTeam.type.name());
@@ -38,7 +38,7 @@ class GameTest {
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
         transformers.add(optimusPrime);
-        GameResult gameResult = game.fight(transformers);
+        GameResult gameResult = battle.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals("AUTOBOT", gameResult.winningTeam.type.name());
@@ -53,7 +53,7 @@ class GameTest {
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(predaking);
         transformers.add(bluestreak);
-        GameResult gameResult = game.fight(transformers);
+        GameResult gameResult = battle.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals("DECEPTION", gameResult.winningTeam.type.name());
@@ -68,7 +68,7 @@ class GameTest {
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
         transformers.add(bluestreak);
-        GameResult gameResult = game.fight(transformers);
+        GameResult gameResult = battle.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals("AUTOBOT", gameResult.winningTeam.type.name());
@@ -83,7 +83,7 @@ class GameTest {
         ArrayList<Transformer> transformers = new ArrayList<>();
         transformers.add(soundwave);
         transformers.add(testTransformer);
-        GameResult gameResult = game.fight(transformers);
+        GameResult gameResult = battle.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
         assertEquals(null, gameResult.winningTeam);

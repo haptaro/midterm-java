@@ -3,7 +3,7 @@ package ca.bcit.winter2021.comp2522.midterm.problem2;
 import java.util.ArrayList;
 
 
-public class Game {
+public class Battle {
     private TransformersSorter sorter = new TransformersSorter();
     private int buttleCount = 0;
     private int deceptionWonCount = 0;
