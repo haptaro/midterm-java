@@ -152,7 +152,7 @@ public class TestDataFactory {
             case SKYDIVE:
                 return  new Transformer(
                         "Skydive",
-                        TransformersType.DECEPTION,
+                        TransformersType.AUTOBOT,
                         5,
                         9,
                         9,

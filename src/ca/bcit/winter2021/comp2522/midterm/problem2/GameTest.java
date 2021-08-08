@@ -99,7 +99,7 @@ class GameTest {
 
         game.start(transformers);
 
-        String expectedNumberOfBattles = "The number of battles: 5";
+        String expectedNumberOfBattles = "The number of battles: 4";
         String expectedWinningTeam = "The winning team: (Deceptions): Divebomb";
         String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: ";
 
@@ -155,6 +155,39 @@ class GameTest {
         String expectedNumberOfBattles = "The number of battles: 1";
         String expectedWinningTeam = "The winning team: (Autobots): Bluestreak";
         String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: (Deceptions): Predaking Soundwave Cliffjumper";
+
+        assertEquals(expectedNumberOfBattles, game.formatedNumberOfBattles);
+        assertEquals(expectedWinningTeam, game.formatedWinningTeam);
+        assertEquals(expectedSurvivingMembersOfLosingTeam, game.formatedSurvivingMembersOfLosingTeam);
+    }
+
+    @Test
+    void test_dataFile_sixthBattle() {
+        ArrayList<Transformer> transformers = new ArrayList<>();
+
+        Transformer predaking = TestDataFactory.fixture(FixtureName.PREDAKING); // rank: 7
+        Transformer razorclaw = TestDataFactory.fixture(FixtureName.RAZORCLAW); // rank: 7
+        Transformer scavenger = TestDataFactory.fixture(FixtureName.SCAVENGER); // rank: 9
+        Transformer cutthroat = TestDataFactory.fixture(FixtureName.CUTTHROAT); // rank: 8
+        transformers.add(predaking);
+        transformers.add(razorclaw);
+        transformers.add(scavenger);
+        transformers.add(cutthroat);
+
+        Transformer optimusPrime = TestDataFactory.fixture(FixtureName.OPTIMUSPRIME); // rank: 5
+        Transformer blaster = TestDataFactory.fixture(FixtureName.BLASTER); // rank: 5
+        Transformer freeway = TestDataFactory.fixture(FixtureName.FREEWAY); // rank: 2
+        Transformer skydive = TestDataFactory.fixture(FixtureName.SKYDIVE); // rank: 5
+        transformers.add(optimusPrime);
+        transformers.add(blaster);
+        transformers.add(freeway);
+        transformers.add(skydive);
+
+        game.start(transformers);
+
+        String expectedNumberOfBattles = "The number of battles: 1";
+        String expectedWinningTeam = "The winning team: (Deceptions): Predaking";
+        String expectedSurvivingMembersOfLosingTeam = "The surviving members of the losing team: ";
 
         assertEquals(expectedNumberOfBattles, game.formatedNumberOfBattles);
         assertEquals(expectedWinningTeam, game.formatedWinningTeam);
