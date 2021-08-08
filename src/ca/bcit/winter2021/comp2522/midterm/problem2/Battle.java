@@ -17,11 +17,14 @@ public class Battle {
         ArrayList<Transformer> sortedDeceptionTransformers = sorter.sort(deceptionTransformers);
         ArrayList<Transformer> sortedAutobotTransformers = sorter.sort(autobotTransformers);
 
+        ArrayList<Transformer> immutableSortedDeceptionTransformers = new ArrayList<Transformer>(sortedDeceptionTransformers);
+        ArrayList<Transformer> immutableSortedAutobotTransformers = new ArrayList<Transformer>(sortedAutobotTransformers);
+
         int index = 0;
         while(!(buttleCount >= maxBattleCount)){
             BattleRules rules = new BattleRules(
-                    sortedDeceptionTransformers.get(index),
-                    sortedAutobotTransformers.get(index)
+                    immutableSortedDeceptionTransformers.get(index),
+                    immutableSortedAutobotTransformers.get(index)
             );
 
             BattleResult battleResult = rules.buttle();
@@ -38,7 +41,7 @@ public class Battle {
                     buttleCount += 1;
                     return new GameResult(
                             buttleCount,
-                            sortedDeceptionTransformers.get(0),
+                            immutableSortedDeceptionTransformers.get(0),
                             null
                     );
 
@@ -52,7 +55,7 @@ public class Battle {
                     buttleCount += 1;
                     return new GameResult(
                             buttleCount,
-                            sortedAutobotTransformers.get(0),
+                            immutableSortedAutobotTransformers.get(0),
                             null
                     );
 
@@ -80,13 +83,13 @@ public class Battle {
             if(sortedDeceptionTransformers.isEmpty()) {
                 return  new GameResult(
                         buttleCount,
-                        sortedAutobotTransformers.get(0),
+                        immutableSortedAutobotTransformers.get(0),
                         null
                 );
             } else {
                 return  new GameResult(
                         buttleCount,
-                        sortedAutobotTransformers.get(0),
+                        immutableSortedAutobotTransformers.get(0),
                         sortedDeceptionTransformers.get(0)
                 );
             }
@@ -100,7 +103,7 @@ public class Battle {
             } else {
                 return  new GameResult(
                         buttleCount,
-                        sortedDeceptionTransformers.get(0),
+                        immutableSortedDeceptionTransformers.get(0),
                         sortedAutobotTransformers.get(0)
                 );
             }

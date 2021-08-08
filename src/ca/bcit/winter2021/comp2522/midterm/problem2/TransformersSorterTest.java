@@ -76,4 +76,34 @@ class TransformersSorterTest {
         assertEquals(transformers.get(2).name, rewind.name);
         assertEquals(transformers.get(3).name, grimlock.name);
     }
+
+    @Test
+    void test_sort_five() {
+        ArrayList<Transformer> transformers = new ArrayList<>();
+
+        Transformer divebomb = TestDataFactory.fixture(FixtureName.DIVEBOMB); // rank: 3
+        Transformer predaking = TestDataFactory.fixture(FixtureName.PREDAKING); // rank: 7
+        Transformer cutthroat = TestDataFactory.fixture(FixtureName.CUTTHROAT); // rank: 8
+        Transformer headstrong = TestDataFactory.fixture(FixtureName.HEADSTRONG); // rank: 6
+        Transformer kickback = TestDataFactory.fixture(FixtureName.KICKBACK); // rank: 6
+        Transformer skydive = TestDataFactory.fixture(FixtureName.SKYDIVE); // rank: 5
+        Transformer megatron = TestDataFactory.fixture(FixtureName.MEGATRON); // rank: 7
+        transformers.add(divebomb);
+        transformers.add(predaking);
+        transformers.add(cutthroat);
+        transformers.add(headstrong);
+        transformers.add(kickback);
+        transformers.add(skydive);
+        transformers.add(megatron);
+
+        sorter.sort(transformers);
+
+        assertEquals(transformers.get(0).name, divebomb.name);
+        assertEquals(transformers.get(1).name, skydive.name);
+        assertEquals(transformers.get(2).name, headstrong.name);
+        assertEquals(transformers.get(3).name, kickback.name);
+        assertEquals(transformers.get(4).name, predaking.name);
+        assertEquals(transformers.get(5).name, megatron.name);
+        assertEquals(transformers.get(6).name, cutthroat.name);
+    }
 }
