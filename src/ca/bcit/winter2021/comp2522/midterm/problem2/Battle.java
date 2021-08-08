@@ -97,8 +97,8 @@ public class Battle {
             if(sortedAutobotTransformers.isEmpty()) {
                 return  new GameResult(
                         buttleCount,
-                        null,
-                        sortedAutobotTransformers
+                        immutableSortedDeceptionTransformers.get(0),
+                        null
                 );
             } else {
                 return  new GameResult(

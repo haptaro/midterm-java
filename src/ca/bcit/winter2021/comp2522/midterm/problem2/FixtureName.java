@@ -26,5 +26,9 @@ public enum FixtureName {
     DOUBLECROSS,
     CLIFFJUMPER,
     SCAVENGER,
-    TEST;
+    TEST,
+    TEST1,
+    TEST2,
+    TEST3,
+    TEST4;
 }

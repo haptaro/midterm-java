@@ -60,13 +60,45 @@ class BattleRulesTest {
     }
 
     @Test
-    void test_normal_battule() {
+    void test_normal_buttule() {
         Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE);
         Transformer rewind = TestDataFactory.fixture(FixtureName.REWIND);
 
         BattleRules rules = new BattleRules(
                 soundwave,
                 rewind
+        );
+
+        assertEquals(BattleResult.DECEPTION_WIN, rules.buttle());
+    }
+
+    @Test
+    void test_buttle_4_more_courage_points_and_3_more_strength_points_regardress_of_overall_rating() {
+        // courage: 1, strength: 1, overallRating: 35
+        Transformer test1 = TestDataFactory.fixture(FixtureName.TEST1);
+        // courage: 10, strength: 10, overallRating: 16
+        Transformer test2 = TestDataFactory.fixture(FixtureName.TEST2);
+
+        BattleRules rules = new BattleRules(
+                test1,
+                test2
+        );
+
+        assertEquals(BattleResult.AUTOBOT_WIN, rules.buttle());
+    }
+
+    @Test
+    void test_buttle_4_more_skill_above_should_win_regardress_of_overall_rating() {
+        // skill: 10, overallRating:5
+        Transformer test3 = TestDataFactory.fixture(FixtureName.TEST3);
+        System.out.println(test3.overallRating());
+        // skill: 1, overallRating: 50
+        Transformer test4 = TestDataFactory.fixture(FixtureName.TEST4);
+        System.out.println(test4.overallRating());
+
+        BattleRules rules = new BattleRules(
+                test3,
+                test4
         );
 
         assertEquals(BattleResult.DECEPTION_WIN, rules.buttle());

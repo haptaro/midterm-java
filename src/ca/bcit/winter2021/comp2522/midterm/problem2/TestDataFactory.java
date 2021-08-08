@@ -344,6 +344,58 @@ public class TestDataFactory {
                         6,
                         10
                 );
+            case TEST1:
+                return new Transformer(
+                        "Test1",
+                        TransformersType.DECEPTION,
+                        1,
+                        9,
+                        9,
+                        8,
+                        8,
+                        1,
+                        8,
+                        10
+                );
+            case TEST2:
+                return new Transformer(
+                        "Test2",
+                        TransformersType.AUTOBOT,
+                        10,
+                        1,
+                        1,
+                        2,
+                        2,
+                        10,
+                        2,
+                        10
+                );
+            case TEST3:
+                return new Transformer(
+                        "Test3",
+                        TransformersType.DECEPTION,
+                        5,
+                        1,
+                        1,
+                        1,
+                        1,
+                        5,
+                        1,
+                        10
+                );
+            case TEST4:
+                return new Transformer(
+                        "Test4",
+                        TransformersType.AUTOBOT,
+                        5,
+                        10,
+                        10,
+                        10,
+                        10,
+                        5,
+                        10,
+                        1
+                );
             default:
                 System.out.println(">>> Error");
         }

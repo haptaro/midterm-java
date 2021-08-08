@@ -71,7 +71,7 @@ class BattleTest {
         GameResult gameResult = battle.fight(transformers);
 
         assertEquals(1, gameResult.numberOfBattles);
-        assertEquals("AUTOBOT", gameResult.winningTeam.type.name());
+        assertEquals("DECEPTION", gameResult.winningTeam.type.name());
         assertEquals(null, gameResult.survivingMembersOfLosingTeam);
     }
 
