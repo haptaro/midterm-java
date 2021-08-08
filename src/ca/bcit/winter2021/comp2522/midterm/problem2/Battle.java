@@ -27,7 +27,7 @@ public class Battle {
                     immutableSortedAutobotTransformers.get(index)
             );
 
-            BattleResult battleResult = rules.buttle();
+            BattleResult battleResult = rules.battle();
             switch (battleResult) {
                 case BOTH_DESTROYED:
                     buttleCount += 1;

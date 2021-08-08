@@ -9,7 +9,7 @@ public class BattleRules {
         this.autobotTransformer = autobotTransformer;
     }
 
-    public BattleResult buttle() {
+    public BattleResult battle() {
         if (autobotTransformer.name == "Optimus Prime" && deceptionTransformer.name == "Predaking") {
             return BattleResult.BOTH_DESTROYED;
         }

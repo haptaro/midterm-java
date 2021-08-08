@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BattleRulesTest {
 
     @Test
-    void test_buttle_predaking_win_predaking() {
+    void test_battle_predaking_win_predaking() {
         Transformer predaking = TestDataFactory.fixture(FixtureName.PREDAKING);
         Transformer bluestreak = TestDataFactory.fixture(FixtureName.BLUESTREAK);
 
@@ -17,11 +17,11 @@ class BattleRulesTest {
                 bluestreak
         );
 
-        assertEquals(BattleResult.DECEPTION_SPECIAL_WIN, rules.buttle());
+        assertEquals(BattleResult.DECEPTION_SPECIAL_WIN, rules.battle());
     }
 
     @Test
-    void test_buttle_tie_both_destroyed() {
+    void test_battle_tie_both_destroyed() {
         Transformer predaking = TestDataFactory.fixture(FixtureName.PREDAKING);
         Transformer optimusPrime = TestDataFactory.fixture(FixtureName.OPTIMUSPRIME);
 
@@ -30,11 +30,11 @@ class BattleRulesTest {
                 optimusPrime
         );
 
-        assertEquals(BattleResult.BOTH_DESTROYED, rules.buttle());
+        assertEquals(BattleResult.BOTH_DESTROYED, rules.battle());
     }
 
     @Test
-    void test_buttle_optimusPrime_win_optimusPrime() {
+    void test_battle_optimusPrime_win_optimusPrime() {
         Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE);
         Transformer optimusPrime = TestDataFactory.fixture(FixtureName.OPTIMUSPRIME);
 
@@ -43,11 +43,11 @@ class BattleRulesTest {
                 optimusPrime
         );
 
-        assertEquals(BattleResult.AUTOBOT_SPECIAL_WIN, rules.buttle());
+        assertEquals(BattleResult.AUTOBOT_SPECIAL_WIN, rules.battle());
     }
 
     @Test
-    void test_buttle_same_overall_rating_should_both_destroyed() {
+    void test_battle_same_overall_rating_should_both_destroyed() {
         Transformer soundwave = TestDataFactory.fixture(FixtureName.SOUNDWAVE);
         Transformer test = TestDataFactory.fixture(FixtureName.TEST);
 
@@ -56,7 +56,7 @@ class BattleRulesTest {
                 test
         );
 
-        assertEquals(BattleResult.BOTH_DESTROYED, rules.buttle());
+        assertEquals(BattleResult.BOTH_DESTROYED, rules.battle());
     }
 
     @Test
@@ -69,11 +69,11 @@ class BattleRulesTest {
                 rewind
         );
 
-        assertEquals(BattleResult.DECEPTION_WIN, rules.buttle());
+        assertEquals(BattleResult.DECEPTION_WIN, rules.battle());
     }
 
     @Test
-    void test_buttle_4_more_courage_points_and_3_more_strength_points_regardress_of_overall_rating() {
+    void test_battle_4_more_courage_points_and_3_more_strength_points_regardress_of_overall_rating() {
         // courage: 1, strength: 1, overallRating: 35
         Transformer test1 = TestDataFactory.fixture(FixtureName.TEST1);
         // courage: 10, strength: 10, overallRating: 16
@@ -84,11 +84,11 @@ class BattleRulesTest {
                 test2
         );
 
-        assertEquals(BattleResult.AUTOBOT_WIN, rules.buttle());
+        assertEquals(BattleResult.AUTOBOT_WIN, rules.battle());
     }
 
     @Test
-    void test_buttle_4_more_skill_above_should_win_regardress_of_overall_rating() {
+    void test_battle_4_more_skill_above_should_win_regardress_of_overall_rating() {
         // skill: 10, overallRating:5
         Transformer test3 = TestDataFactory.fixture(FixtureName.TEST3);
         System.out.println(test3.overallRating());
@@ -101,6 +101,6 @@ class BattleRulesTest {
                 test4
         );
 
-        assertEquals(BattleResult.DECEPTION_WIN, rules.buttle());
+        assertEquals(BattleResult.DECEPTION_WIN, rules.battle());
     }
 }
